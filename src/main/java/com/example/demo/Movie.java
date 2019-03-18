@@ -3,11 +3,9 @@ package com.example.demo;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
-
 @Getter
 @Setter
-public class Movie implements Serializable {
+public class Movie {
 
     private String name;
     private int score;
