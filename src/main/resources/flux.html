@@ -1,0 +1,21 @@
+<script>
+  var source = new EventSource('http://10.159.209.19:8080/api/flux');
+  
+  var i = 0;
+  
+  function onMsg() {
+	i++;
+	console.log('message ' + i + ' from server: ' + event.data);
+	
+	if (i == 5) {
+		console.log('I am tired...');
+		source.removeEventListener('message', onMsg);
+	}	
+	
+  }
+  
+  source.addEventListener('message', onMsg);
+    
+	
+  
+</script>
